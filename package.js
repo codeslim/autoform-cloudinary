@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'cosio55:autoform-cloudinary',
-  git: 'https://github.com/cosio55/autoform-cloudinary.git',
+  name: 'aristeuroriz:autoform-cloudinary',
+  git: 'https://github.com/aristeuroriz/autoform-cloudinary.git',
   summary: 'Use Cloudinary with autoform/simpleschema to upload an image, and save the url on the collection.',
-  version: '0.0.2'
+  version: '0.0.1'
 });
 
 Package.onUse(function (api) {
@@ -17,7 +17,8 @@ Package.onUse(function (api) {
     'reactive-var',
     'underscore',
     'nekojira:cloudinary-jquery-upload@0.1.0',
-    'aldeed:autoform@5.3.0'
+    'aldeed:autoform@5.3.0',
+    'markoshust:owl-carousel-2@2.0.0-beta.3a'
   ], 'client');
 
   api.addFiles([

@@ -1,54 +1,39 @@
 <template name="afCloudinary">
   <div class="afCloudinary">
     {{#if url}}
+    <div class='owl-carousel'>
+      {{#each url}}
       <div class="afCloudinary-thumbnail">
-        <a href="{{url}}" target="_blank"><img src="{{url}}"></a>
+        <a href="{{this}}" target="_blank"><img src="{{this}}"></a>
+        <span><a href="#" class="js-remove">Remove</a></span>
       </div>
-      <a href="#" class="js-remove">Remove</a>
-    {{else}}
-      <button
-        type="button">
-        Browse
-      </button>
+      {{/each}}
+    </div>
     {{/if}}
-    <input
-      name="file"
-      type="file"
-      class="cloudinary-fileupload"
-      data-cloudinary-field="image_id"
-      style="display: none"
-      accept="{{accept}}"/>
-    <input {{atts}}
-      type="hidden"
-      name="url"
-      value="{{url}}"/>
+    <button type="button">Add</button>
+    <input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="image_id" style="display: none" accept="{{accept}}" multiple="multiple"/>
+    <input {{atts}} type="hidden" name="url" value="{{url}}"/>
   </div>
 </template>
 
 <template name="afCloudinary_bootstrap3">
   <div class="afCloudinary">
     {{#if url}}
+    <div class='owl-carousel'>
+      {{#each url}}
       <div class="afCloudinary-thumbnail">
-        <a href="{{url}}" target="_blank"><img src="{{url}}"></a>
-      </div>
-      <a href="#" class="js-remove"><span class="glyphicon glyphicon-remove"></span> Remove</a>
-    {{else}}
-      <button
-        type="button"
-        class="btn btn-default">
-        Browse
-      </button>
-    {{/if}}
-    <input
-      name="file"
-      type="file"
-      class="cloudinary-fileupload form-control"
-      data-cloudinary-field="image_id"
-      style="display: none"
-      accept="{{accept}}"/>
-    <input {{atts}}
-      type="hidden"
-      name="url"
-      value="{{url}}"/>
+        <a href="{{this}}" target="_blank"><img src="{{this}}"></a>
+        <span>
+         <a href="#" class="js-remove"><span class="glyphicon glyphicon-remove"></span></a></span>
+       </div>
+       {{/each}}
+     </div>
+     {{/if}}
+     <button type="button" class="btn btn-default">
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+    
+    <input name="file" type="file" class="cloudinary-fileupload form-control" data-cloudinary-field="image_id" style="display: none" accept="{{accept}}" multiple="multiple"/>
+    <input {{atts}} type="hidden" name="url" value="{{url}}"/>
   </div>
 </template>
