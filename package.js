@@ -1,6 +1,6 @@
 Package.describe({
-  name: 'aristeuroriz:autoform-cloudinary',
-  git: 'https://github.com/aristeuroriz/autoform-cloudinary.git',
+  name: 'codeslim:autoform-cloudinary',
+  git: 'https://github.com/codeslim/autoform-cloudinary.git',
   summary: 'Use Cloudinary with autoform/simpleschema to upload an image, and save the url on the collection.',
   version: '0.0.1'
 });
