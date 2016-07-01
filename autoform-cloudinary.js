@@ -50,7 +50,10 @@ _.each(templates, function(tmpl) {
 
   Template[tmpl].onRendered(function() {
         var self = this;
-        
+
+        self.$('.owl-carousel').owlCarousel({
+          center: true
+        });
 
         Meteor.call('afCloudinarySign', function(err, res) {
           if (err) {
@@ -70,6 +73,11 @@ _.each(templates, function(tmpl) {
             Session.set('urls_array', imgs_array);
 
             console.log(Session.get('urls_array'));
+
+            var item = "<div class='afCloudinary-thumbnail'><a href='" + data.result.secure_url + "' target='_blank'><img src='" + data.result.secure_url + "'></a><span><a href='#'' class='js-remove'><span class='glyphicon glyphicon-remove'></span></a></span></div>";
+            var owl = $(".owl-carousel");
+            owl.data('owl.carousel').add(item);
+            owl.data('owl.carousel').refresh();
 
             Tracker.flush();
           });
@@ -98,6 +106,7 @@ _.each(templates, function(tmpl) {
 
     'click .js-remove': function(e, t) {
       e.preventDefault();
+      console.log(e);
       t.url.set(null);
     }
   });

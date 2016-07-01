@@ -18,17 +18,8 @@
 
 <template name="afCloudinary_bootstrap3">
   <div class="afCloudinary">
-    {{#if url}}
     <div class='owl-carousel'>
-      {{#each url}}
-      <div class="afCloudinary-thumbnail">
-        <a href="{{this}}" target="_blank"><img src="{{this}}"></a>
-        <span>
-         <a href="#" class="js-remove"><span class="glyphicon glyphicon-remove"></span></a></span>
-       </div>
-       {{/each}}
      </div>
-     {{/if}}
      <button type="button" class="btn btn-default">
       <span class="glyphicon glyphicon-plus"></span>
     </button>
